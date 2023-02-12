@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <title>Bank Deposite Withdraw</title>
+</head>
+
+<body>
+
+    <section class="dashboard-section">
+        <div class="dashboard-money">
+            <div class="dash-item bg-indigo-600 rounded">
+                <h2 class="text-white">Deposite</h2>
+                <h3 class="text-white text-4xl">$<span id="deposite-total">0</span></h3>
+            </div>
+            <div class="dash-item bg-green-500 rounded ">
+                <h2 class="text-white">Withdraw</h2>
+                <h3 class="text-white text-4xl">$<span id="withdraw-total">0</span></h3>
+            </div>
+            <div class="dash-item bg-pink-500 rounded">
+                <h2 class="text-white">Balance</h2>
+                <h3 class="text-white text-4xl">$<span id="balance-total">0</span></h3>
+            </div>
+        </div>
+
+        <div class="dashboard-input-section">
+            <div class="input bg-blue-400 p-5 rounded">
+                <h2 class="text-white text-xl font-bold">Deposite</h2>
+                <input type="text" class="rounded my-2 px-2 py-1 w-full" id="deposite">
+                <h3 id="warning-deposite" class="mb-2 text-amber-300">Enter an amount!!</h3>
+                <button class="bg-blue-700 text-white py-1 px-2 rounded hover:bg-blue-800"
+                    id="deposite-button">Deposite</button>
+            </div>
+            <div class="input bg-indigo-400 p-5 rounded">
+                <h2 class="text-white text-xl font-bold">Withdraw</h2>
+                <input type="text" class="rounded my-2 px-2 py-1 w-full" id="withdraw">
+                <h3 id="warning-withdraw" class="mb-2 text-amber-300">Enter an amount!!</h3>
+                <button class="bg-blue-700 text-white py-1 px-2 rounded hover:bg-blue-800"
+                    id="withdraw-button">Withdraw</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>
