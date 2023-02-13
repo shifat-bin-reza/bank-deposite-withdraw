@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Bank Deposite Withdraw</title>
-</head>
-
-<body>
-    <section class="login-container">
-        <div>
-            <h2 class="login-header text-blue-600 text-center text-xl">LOGIN</h2>
-
-            <div class="mb-5">
-                <label for="email">Email</label>
-                <input type="email" class="input px-2 py-1 mt-1" id="email">
+    <head>
+        <meta charset="utf-8">
+            <meta content="IE=edge" http-equiv="X-UA-Compatible">
+                <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                    <script src="https://cdn.tailwindcss.com">
+                    </script>
+                    <link href="./styles/style.css" rel="stylesheet">
+                        <title>
+                            Bank Deposite Withdraw
+                        </title>
+                    </link>
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <section class="login-container">
+            <div>
+                <h2 class="login-header text-blue-600 text-center text-xl">
+                    LOGIN
+                </h2>
+                <div class="mb-5">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input class="input px-2 py-1 mt-1" id="email" type="email">
+                    </input>
+                </div>
+                <div class="mb-5">
+                    <label for="password">
+                        Password
+                        <br/>
+                    </label>
+                    <input class="input px-2 py-1 mt-1" id="password" type="password">
+                    </input>
+                </div>
+                <h3 class="mb-4 text-center text-red-500" id="invalid-info">
+                    Invalid Username or Password
+                </h3>
+                <button class="btn-login bg-blue-600 p-1.5 text-white hover:bg-blue-700" id="btn-login">
+                    Login
+                </button>
             </div>
-
-            <div class="mb-5">
-                <label for="password">Password<br></label>
-                <input type="password" class="input px-2 py-1 mt-1" id="password">
-            </div>
-
-            <h3 id="invalid-info" class="mb-4 text-center text-red-500">Invalid Username or Password</h3>
-            <button id="btn-login" class="btn-login bg-blue-600 p-1.5 text-white hover:bg-blue-700">Login</button>
-        </div>
-    </section>
-
-    <script src="./js/script.js"></script>
-</body>
-
+        </section>
+        <script src="./js/script.js">
+        </script>
+    </body>
 </html>
