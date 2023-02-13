@@ -1,6 +1,5 @@
-document
-  .getElementById("deposite-button")
-  .addEventListener("click", function () {
+// Deposite button function
+document.getElementById("deposite-button").addEventListener("click", function () {
     const newDepositeAmount = document.getElementById("deposite").value;
 
     // adding the value to deposite
@@ -17,7 +16,7 @@ document
 
     const currentBalanceTotal =
       parseFloat(previousBalanceTotal) + parseFloat(newDepositeAmount);
-    if (document.getElementById("deposite").value == "") {
+    if (newDepositeAmount == "") {
       document.getElementById("warning-deposite").style.display = "block";
     } else {
       document.getElementById("warning-deposite").style.display = "none";
@@ -28,9 +27,9 @@ document
     document.getElementById("deposite").value = "";
   });
 
-document
-  .getElementById("withdraw-button")
-  .addEventListener("click", function () {
+
+// Withdraw button function
+document.getElementById("withdraw-button").addEventListener("click", function () {
     //withdraw
     const newWithdrawAmount = document.getElementById("withdraw").value;
 
@@ -50,7 +49,7 @@ document
 
     if (afterWithdraw < 0) {
       alert("Not enough money");
-    } else if (document.getElementById("withdraw").value == "") {
+    } else if (newWithdrawAmount == "") {
       document.getElementById("warning-withdraw").style.display = "block";
     } else {
       document.getElementById("warning-withdraw").style.display = "none";
