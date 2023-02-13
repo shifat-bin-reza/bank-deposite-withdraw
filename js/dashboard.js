@@ -1,5 +1,7 @@
 // Deposite button function
-document.getElementById("deposite-button").addEventListener("click", function () {
+document
+  .getElementById("deposite-button")
+  .addEventListener("click", function () {
     const newDepositeAmount = document.getElementById("deposite").value;
 
     // adding the value to deposite
@@ -27,9 +29,10 @@ document.getElementById("deposite-button").addEventListener("click", function ()
     document.getElementById("deposite").value = "";
   });
 
-
 // Withdraw button function
-document.getElementById("withdraw-button").addEventListener("click", function () {
+document
+  .getElementById("withdraw-button")
+  .addEventListener("click", function () {
     //withdraw
     const newWithdrawAmount = document.getElementById("withdraw").value;
 
