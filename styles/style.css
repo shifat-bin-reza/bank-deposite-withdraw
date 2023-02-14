@@ -10,19 +10,23 @@
     transform: translate(-50%, -50%);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+
 .login-header {
     margin-bottom: 20px;
     font-weight: 700;
 }
+
 input {
     border: 1px solid grey;
     width: 100%;
     border-radius: 5px;
 }
+
 .btn-login {
     width: 100%;
     border-radius: 5px;
 }
+
 #invalid-info {
     display: none;
 }

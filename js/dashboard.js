@@ -1,64 +1,59 @@
-// Deposite button function
-document
-  .getElementById("deposite-button")
-  .addEventListener("click", function () {
-    const newDepositeAmount = document.getElementById("deposite").value;
+// This function takes all the id of html input as argument, find the value of each input field, convert them to float and return the value.
+function getIdFromInput(getInputId) {
+  const getInputIdString = document.getElementById(getInputId);
+  const getInputIdValue = getInputIdString.value;
+  if (getInputIdValue == "") {
+    alert("Please enter your amount in number!!");
+    return 0;
+  } else {
+    const convertInputToNumber = parseFloat(getInputIdValue);
+    getInputIdString.value = "";
+    return convertInputToNumber;
+  }
+}
 
-    // adding the value to deposite
-    const depositeTotalElement = document.getElementById("deposite-total");
-    const previousDepositeTotal = depositeTotalElement.innerText;
+// This function takes all the dashboard items id as argument, find the inner text, convert them to float and return them.
+function getIdFormDashboard(getDashboardId) {
+  const getDashboardInnerTextString = document.getElementById(getDashboardId);
+  const getDashboardInnerText = getDashboardInnerTextString.innerText;
+  const convertInnerToNumber = parseFloat(getDashboardInnerText);
+  return convertInnerToNumber;
+}
 
-    // calculating value
-    const currentDepositeTotal =
-      parseFloat(previousDepositeTotal) + parseFloat(newDepositeAmount);
+// This function has two parameter. First Parameter is the id of html element and the second one is the new value after calculation. After calculating, it changes the current inner text with updated new value.
+function setValueToDashboard(getDashboardId, getNewValue) {
+  const newDashboardValue = document.getElementById(getDashboardId);
+  newDashboardValue.innerText = getNewValue;
+}
 
-    // calculating balace section
-    const balanceTotalElement = document.getElementById("balance-total");
-    const previousBalanceTotal = balanceTotalElement.innerText;
+// This is a click event for 'deposite' button where we call the functions and set the values according to the function.
+document.getElementById("deposite-button").addEventListener("click", function () {
+  const getDepositeValueFromUser = getIdFromInput('deposite');
 
-    const currentBalanceTotal =
-      parseFloat(previousBalanceTotal) + parseFloat(newDepositeAmount);
-    if (newDepositeAmount == "") {
-      document.getElementById("warning-deposite").style.display = "block";
-    } else {
-      document.getElementById("warning-deposite").style.display = "none";
-      depositeTotalElement.innerText = currentDepositeTotal;
-      balanceTotalElement.innerText = currentBalanceTotal;
-    }
+  const getValueFromDeposite = getIdFormDashboard('deposite-total');
+  const updateDepositeTotal = getDepositeValueFromUser + getValueFromDeposite;
+  setValueToDashboard('deposite-total', updateDepositeTotal);
 
-    document.getElementById("deposite").value = "";
-  });
+  const getValueFromTotal = getIdFormDashboard('balance-total');
+  const updateBalanceTotal = getValueFromTotal + getDepositeValueFromUser;
+  setValueToDashboard('balance-total', updateBalanceTotal);
 
-// Withdraw button function
-document
-  .getElementById("withdraw-button")
-  .addEventListener("click", function () {
-    //withdraw
-    const newWithdrawAmount = document.getElementById("withdraw").value;
+});
 
-    // adding the value to withdraw
-    const withdrawTotalElement = document.getElementById("withdraw-total");
-    const previousWithdrawTotal = withdrawTotalElement.innerText;
+// This is a click event for 'withdraw' button where we call the functions and set the values according to the function.
+document.getElementById("withdraw-button").addEventListener("click", function () {
+  const getWithdrawValueFromUser = getIdFromInput('withdraw');
 
-    // calculating value
-    const currentWithdrawTotal =
-      parseFloat(previousWithdrawTotal) + parseFloat(newWithdrawAmount);
+  const getValueFromWithdraw = getIdFormDashboard("withdraw-total");
+  const updateWithdrawTotal = getWithdrawValueFromUser + getValueFromWithdraw;
 
-    const balanceTotal = document.getElementById("balance-total");
-    previousBalanceTotal = balanceTotal.innerText;
+  const getValueFromBalanceTotal = getIdFormDashboard("balance-total");
+  const afterWithdraw = getValueFromBalanceTotal - getWithdrawValueFromUser;
+  if (afterWithdraw < 0) {
+    alert("Not enough money");
+  } else {
+    setValueToDashboard('withdraw-total', updateWithdrawTotal);
+    setValueToDashboard('balance-total', afterWithdraw);
+  }
 
-    const afterWithdraw =
-      parseFloat(previousBalanceTotal) - parseFloat(newWithdrawAmount);
-
-    if (afterWithdraw < 0) {
-      alert("Not enough money");
-    } else if (newWithdrawAmount == "") {
-      document.getElementById("warning-withdraw").style.display = "block";
-    } else {
-      document.getElementById("warning-withdraw").style.display = "none";
-      withdrawTotalElement.innerText = currentWithdrawTotal;
-      balanceTotal.innerText = afterWithdraw;
-    }
-
-    document.getElementById("withdraw").value = "";
-  });
+});

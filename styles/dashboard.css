@@ -1,6 +1,7 @@
 input:focus {
     outline: none;
 }
+
 .dashboard-section {
     position: absolute;
     top: 50%;
@@ -12,6 +13,7 @@ input:focus {
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     padding: 50px;
 }
+
 .dash-item {
     height: 100px;
     padding: 20px;
@@ -21,10 +23,13 @@ input:focus {
     font-weight: 700;
     font-size: 20px;
 }
+
 .dashboard-input-section {
     display: flex;
     gap: 10px;
 }
-#warning-withdraw, #warning-deposite {
+
+#warning-withdraw,
+#warning-deposite {
     display: none;
 }
